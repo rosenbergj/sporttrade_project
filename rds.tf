@@ -4,15 +4,31 @@ resource "aws_db_subnet_group" "default" {
 }
 
 resource "aws_db_instance" "wp_mysql_db" {
-  allocated_storage = 10
-  storage_type      = "gp2"
-  engine            = "mysql"
-  engine_version    = "5.7"
-  instance_class    = "db.t2.micro"
-  name              = "wpdb"
-  # username             = 
-  # password             = 
-  parameter_group_name = "default.mysql5.7"
-  multi_az             = true
-  db_subnet_group_name = aws_db_subnet_group.default.id
+  allocated_storage      = 10
+  storage_type           = "gp2"
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  instance_class         = "db.t2.micro"
+  name                   = "wpdb"
+  username               = "wordpressdb"
+  password               = "changeme"
+  parameter_group_name   = "default.mysql5.7"
+  multi_az               = true
+  db_subnet_group_name   = aws_db_subnet_group.default.id
+  vpc_security_group_ids = [aws_security_group.allow_mysql.id]
+
+}
+
+resource "aws_security_group" "allow_mysql" {
+  name        = "allow-mysql"
+  description = "Allow Mysql inbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    description = "MySQL from local"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]
+  }
 }

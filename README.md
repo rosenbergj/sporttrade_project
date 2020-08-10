@@ -24,5 +24,6 @@ terraform destroy
 
 * Custom AMI built with packer, including DB connection info
 * HTTPS/TLS
+* Store TF state remotely
 * Logging from AWS resources
 * Consider switching to Aurora

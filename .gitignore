@@ -1,4 +1,4 @@
 .terraform
 credentials.tfvars
 plan.tfplan
-terraform.tfstate
+terraform.tfstate*

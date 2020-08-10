@@ -1,9 +1,9 @@
 resource "aws_lb" "wordpress_alb" {
-    name               = "wordpress-alb"
-    internal           = false
-    load_balancer_type = "application"
+  name               = "wordpress-alb"
+  internal           = false
+  load_balancer_type = "application"
   # security_groups    = 
-    subnets            = [aws_subnet.subnet_a_public.id, aws_subnet.subnet_b_public.id]
+  subnets = [aws_subnet.subnet_a_public.id, aws_subnet.subnet_b_public.id]
 }
 
 resource "aws_alb_target_group" "wordpress_alb_tg" {

@@ -8,4 +8,4 @@ apply:
 	terraform apply plan.tfplan
 
 clean:
-	rm plan.tfplan
+	rm plan.tfplan || /bin/true

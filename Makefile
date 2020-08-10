@@ -9,3 +9,6 @@ apply:
 
 clean:
 	rm plan.tfplan || /bin/true
+
+destroy:
+	terraform destroy -var-file=credentials.tfvars

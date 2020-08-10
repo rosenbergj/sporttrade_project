@@ -17,7 +17,7 @@ make apply
 To destroy deployment:
 
 ```bash
-terraform destroy
+make destroy
 ```
 
 ## Future development

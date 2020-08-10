@@ -5,10 +5,10 @@ resource "aws_launch_template" "wordpress" {
 }
 
 resource "aws_autoscaling_group" "wordpress_asg" {
-  min_size           = 2
-  max_size           = 4
-  desired_capacity   = 2
-  vpc_zone_identifier  = [aws_subnet.subnet_a_public.id, aws_subnet.subnet_b_public.id]
+  min_size            = 2
+  max_size            = 4
+  desired_capacity    = 2
+  vpc_zone_identifier = [aws_subnet.subnet_a_public.id, aws_subnet.subnet_b_public.id]
 
   launch_template {
     id      = aws_launch_template.wordpress.id

@@ -4,3 +4,4 @@
 
 * HTTPS/TLS
 * Logging from AWS resources
+* Consider switching to Aurora

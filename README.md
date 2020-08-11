@@ -32,7 +32,7 @@ make destroy
 
 ## Oops...
 
-So it turns out that this particular Wordpress AMI is not a good example for this demonstration, because it hosts the database locally (rather than connecting to an external RDS database), which means:
+So it turns out that [this particular Wordpress AMI](https://aws.amazon.com/marketplace/pp/B00NN8Y43U), a publicly available one from Bitnami, is not a good example for this demonstration, because it hosts the database locally (rather than connecting to an external RDS database), which means:
 1. The MySQL RDS in this deploy is not used
 1. The two instances of Wordpress spun up by the auto-scaling group are independent and are subject to deletion by scaling actions and policies
 

@@ -1,3 +1,4 @@
+# Image ID refers to publicly-available Bitnami Wordpress AMI
 resource "aws_launch_template" "wordpress" {
   name_prefix            = "wp-"
   image_id               = "ami-0d05d2a692214ce9f"
